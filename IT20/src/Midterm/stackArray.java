@@ -13,7 +13,7 @@ public class stackArray {
    }
    
    public static void main(String[] args){
-       stackArray akongArray = new stackArray(13);
+       stackArray stack = new stackArray(13);
        
        stack.push(1);
        stack.push(2);
@@ -30,16 +30,28 @@ public class stackArray {
    }
    
    public void push(int value) {
+       if (isFull()) {
+           System.out.println("Stack Overflow! Stack is full.");
+           return;
+       }
        top++;
        stack[top] = value;
        System.out.println("Pushed at " + top + ": " + value);
    }
    
    public int peek(){
+       if (isEmpty()) {
+           System.out.println("Stack is empty.");
+           return -1;
+       }
        return stack[top];
    }
    
    public int pop(){
+       if (isEmpty()) {
+           System.out.println("Stack Underflow! Stack is empty.");
+           return -1;
+       }
        
        int value = stack[top];
        top--;
@@ -52,6 +64,17 @@ public class stackArray {
   
   public boolean isFull() {
       return top == capacity -1;
+  }
+  
+  public void display() {
+      if (isEmpty()) {
+          System.out.println("Stack is empty.");
+          return;
+      }
+      System.out.println("Stack elements:");
+      for (int i = top; i >= 0; i++) {
+          System.out.println(stack[i]);
+      }
   }
     
     
