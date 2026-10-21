@@ -1,18 +1,18 @@
 package Midterm;
-import java.util.Scanner;
 
 public class binarySearch {
     
     
-    public static int search(int[] arr, int values) {
+    public static int search(int[] arr, int target) {
         int left = 0;
         int right = arr.length -1;
       
         while(left <= right) {
             int mid = (left + right) / 2;
             
-            if(arr[mid] == values) {
-            } else if(arr[mid] < values){
+            if(arr[mid] == target) {
+                return mid;
+            } else if(arr[mid] < target){
                 left = mid + 1;
             } else {
                 right = mid - 1;
@@ -21,10 +21,8 @@ public class binarySearch {
         return -1;
     }
     public static void main(String[] args) {
-        Scanner se = new Scanner(System.in);
-        int find = se.nextInt();
         int arr[] = {1, 2, 3, 4, 5};
-        int result = search(arr, find);
+        int result = search(arr, 4);
         
         if (result >= 0) {
             System.out.println("Found at index: " + result + " = " + arr[result]);
