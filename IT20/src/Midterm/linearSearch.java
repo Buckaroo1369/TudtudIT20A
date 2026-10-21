@@ -1,7 +1,10 @@
 package Midterm;
+import java.util.Scanner;
+
 
 public class linearSearch {
     
+    Scanner searchElement = new Scanner(System.in);
     public static int search(int[] arr, int values) {
         for(int i = 0; i < arr.length; i++) {
             if(arr[i] == values) {
