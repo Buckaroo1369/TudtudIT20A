@@ -50,5 +50,34 @@ public class SortingAlgorithms {
 
     public static void main(String[] args) {
 
+        int[] originalSignals = { 37, 12, 89, 4, 56, 23, 71, 9, 45, 18 };
+
+        int[] bubbleSignals = originalSignals.clone();
+        int[] selectionSignals = originalSignals.clone();
+        int[] insertionSignals = originalSignals.clone();
+
+        System.out.println("==========================================");
+        System.out.println("           THE LAST TRANSMISSION");
+        System.out.println("==========================================");
+        System.out.println("Incoming signal strengths:");
+        displayArray(originalSignals);
+
+        System.out.println("\nArranging signals from weakest to strongest...");
+
+        bubbleSort(bubbleSignals);
+        System.out.println("\n[BUBBLE SORT]");
+        displayArray(bubbleSignals);
+
+        selectionSort(selectionSignals);
+        System.out.println("\n[SELECTION SORT]");
+        displayArray(selectionSignals);
+
+        insertionSort(insertionSignals);
+        System.out.println("\n[INSERTION SORT]");
+        displayArray(insertionSignals);
+
+        System.out.println("\nAll signals have been arranged.");
+        System.out.println("Broadcast preparation complete.");
+        System.out.println("==========================================");
     }
 }
