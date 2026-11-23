@@ -41,6 +41,13 @@ public class SortingAlgorithms {
         }
     }
 
+    public static void displayArray(int[] arr) {
+        for(int number : arr) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
 
     }
